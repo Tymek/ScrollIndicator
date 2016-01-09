@@ -1,0 +1,15 @@
+{
+  "name": "scrollindicator",
+  "version": "0.5",
+  "description": "Visualize reading progress with small and simple jQuery plugin.",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-bower-task": "^0.4.0",
+    "grunt-contrib-copy": "^0.8.2",
+    "grunt-contrib-cssmin": "^0.14.0",
+    "grunt-contrib-uglify": "^0.11.0",
+    "grunt-sass": "^1.1.0"
+  },
+  "author": "Tymoteusz Czech <czech@t.pl>",
+  "license": "MIT"
+}

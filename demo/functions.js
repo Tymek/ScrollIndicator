@@ -1,0 +1,5 @@
+$(window).load(function () {
+	
+	$.scrollIndicator();
+	
+});
