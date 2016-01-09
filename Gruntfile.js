@@ -43,6 +43,6 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-sass');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 
-	grunt.registerTask('default', ['bower', 'cssmin', 'sass', 'uglify']);
+	grunt.registerTask('default', ['bower', 'sass', 'uglify', 'cssmin']);
 
 };

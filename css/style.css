@@ -1,39 +1,24 @@
-progress {
+progress.scrollindicator {
   width: 100%;
   height: 10px;
   display: block;
   margin-bottom: 20px;
-  background: #ddd;
+  background: #eee;
   position: fixed;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   border: none;
-  color: red;
-  z-index: 1000; }
+  color: #337ab7;
+  z-index: 500; }
 
-progress::-webkit-progress-bar {
+progress.scrollindicator::-webkit-progress-bar {
   background-color: transparent; }
 
-progress::-webkit-progress-value {
-  background-color: red; }
+progress.scrollindicator::-webkit-progress-value {
+  background-color: #337ab7; }
 
-progress::-moz-progress-bar {
-  background-color: red; }
-
-.progress-container {
-  width: 100%;
-  background-color: transparent;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 5px;
-  display: block; }
-
-.progress-bar {
-  background-color: red;
-  width: 0%;
-  display: block;
-  height: inherit; }
+progress.scrollindicator::-moz-progress-bar {
+  background-color: #337ab7; }
 
 /*# sourceMappingURL=style.css.map */

@@ -4,7 +4,8 @@
 		var $element = $(element),
 			defaults = {
 				delay: 100,
-				bindResize: true
+				bindResize: true,
+				bindDOMSubtreeModified: false
 			},
 			plugin = this,
 			load,
@@ -27,19 +28,26 @@
 		load = function () {
 			var bar;
 			bar = document.createElement('progress'),
-			$bar = $(bar);
-			$bar.attr("id", "progressbar");
-			
+				$bar = $(bar);
+				$bar.addClass("scrollindicator");
+
 			if ($element.length < 1) {
 				$element = $("body");
 			}
-			
+
 			$element.prepend($bar);
 
 			plugin.reload();
-			$(window).on('scroll', function () {
-				trigger();
-			});
+
+			$(window).on('scroll', trigger);
+
+			if (plugin.settings.bindResize) {
+				$(window).resize(trigger);
+			}
+
+			if (plugin.settings.bindDOMSubtreeModified) {
+				$('body').bind("DOMSubtreeModified", trigger);
+			}
 		};
 
 		update = function () {
