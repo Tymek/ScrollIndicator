@@ -38,6 +38,7 @@
 		
 		.container {
 			max-width: 800px;
+			padding-bottom: 90px;
 		}
 	</style>
 </head>
@@ -55,36 +56,33 @@
 		<div class="jumbofix">
 			<div class="row">
 				<div class="col-lg-12">
-					<h4>Subheading</h4>
-					<p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-					<h4>Subheading</h4>
-					<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-					<h4>Subheading</h4>
-					<p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-				</div>
-				<div class="col-lg-12">
-					<h4>Subheading</h4>
-					<p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-					<h4>Subheading</h4>
-					<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-					<h4>Subheading</h4>
-					<p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-				</div>
-				<div class="col-lg-12">
-					<h4>Subheading</h4>
-					<p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-					<h4>Subheading</h4>
-					<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-					<h4>Subheading</h4>
-					<p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-				</div>
-				<div class="col-lg-12">
-					<h4>Subheading</h4>
-					<p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-					<h4>Subheading</h4>
-					<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-					<h4>Subheading</h4>
-					<p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+					<h3>Basic example</h3>
+<pre>
+$(window).load(function () {
+    $.scrollIndicator();
+});
+</pre>
+					<p>This will add progress bar to the top of your page.</p>
+					<p>Remember to include <code>scrollindicator.jquery.js</code> or it's minified version in your project, as well as css style.</p>
+					<h3>Usage</h3>
+					<p>You can choose parent element for scroll bar:</p>
+<pre>$("#elementbyid").scrollIndicator();</pre>
+					<p>In this case it will be helpful to include custom style.</p>
+					<h3>Options</h3>
+<pre>$.scrollIndicator({delay: 333, bindResize: false});</pre>
+					<p>Pass options object on initialization</p>
+					<h4>delay</h4>
+					<p>Time in miliseconds between interaction (ex. scroll or resize event) and plugin update.<br>
+					Default: <code>100</code></p>
+					<h4>ieSupport</h4>
+					<p>Support for IE8 and IE9 browsers.<br>
+					Default: <code>true</code></p>
+					<h4>bindResize</h4>
+					<p>Re-calculate values on <code>window.resize</code> event.<br>
+					Default: <code>true</code></p>
+					<h4>bindDOMSubtreeModified</h4>
+					<p>React to changes in DOM model. <strong>Not recommended.</strong><br>
+					Default: <code>false</code></p>
 				</div>
 			</div>
 		</div>
@@ -93,7 +91,6 @@
 
 	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 	<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-	<script src="../lib/HTML5-Progress-polyfill/progress-polyfill.min.js"></script>
 	<script src="../js/scrollindicator.jquery.min.js"></script>
 	<script src="functions.js"></script>
 </body>

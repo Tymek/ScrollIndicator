@@ -4,6 +4,7 @@
 		var $element = $(element),
 			defaults = {
 				delay: 100,
+				ieSupport: true,
 				bindResize: true,
 				bindDOMSubtreeModified: false
 			},
@@ -23,13 +24,17 @@
 		plugin.reload = function () {
 			plugin.docheight = $(document).height();
 			plugin.winheingt = $(window).height();
+			trigger();
 		};
 
 		load = function () {
 			var bar;
-			bar = document.createElement('progress'),
-				$bar = $(bar);
-				$bar.addClass("scrollindicator");
+			bar = document.createElement('progress');
+			$bar = $(bar);
+			$bar.addClass("scrollindicator");
+			if (plugin.settings.ieSupport) {
+				$bar.append('<div class="scrollindicator-ie"><span></span></div>');
+			}
 
 			if ($element.length < 1) {
 				$element = $("body");
@@ -42,17 +47,39 @@
 			$(window).on('scroll', trigger);
 
 			if (plugin.settings.bindResize) {
-				$(window).resize(trigger);
+				$(window).resize(plugin.reload);
 			}
 
 			if (plugin.settings.bindDOMSubtreeModified) {
-				$('body').bind("DOMSubtreeModified", trigger);
+				$('body').bind("DOMSubtreeModified", plugin.reload);
 			}
+			
+			trigger();
 		};
 
 		update = function () {
-			var value = $(window).scrollTop() / (plugin.docheight - plugin.winheingt);
+			var top,
+				value;
+			
+			top = $(window).scrollTop();
+			top = (isNaN(top)) ? 0 : top;
+			
+			if (top === 0) {
+				value = 0;
+			} else {
+			
+			value = top / (plugin.docheight - plugin.winheingt);
+			
+			if (value > 1) {
+				value = 1;
+			}
+			
+			}
+			
 			$bar.attr("value", value);
+			if (plugin.settings.ieSupport) {
+				$bar.find("span").css("width", value * 100 + "%");
+			}
 		};
 
 		trigger = function () {

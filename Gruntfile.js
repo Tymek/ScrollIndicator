@@ -23,9 +23,6 @@ module.exports = function (grunt) {
 				}
 			}
 		},
-		bower: {
-			install: {}
-		},
 		cssmin: {
 			options: {
 				sourceMap: true
@@ -38,11 +35,10 @@ module.exports = function (grunt) {
 		}
 	});
 
-	grunt.loadNpmTasks('grunt-bower-task');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-sass');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 
-	grunt.registerTask('default', ['bower', 'sass', 'uglify', 'cssmin']);
+	grunt.registerTask('default', ['sass', 'uglify', 'cssmin']);
 
 };
