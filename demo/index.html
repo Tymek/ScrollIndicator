@@ -51,7 +51,7 @@
 		<div class="jumbotron">
 			<h1>Scroll indicator</h1>
 			<p class="lead">Visualize reading progress with small and simple jQuery plugin. Adjust style with CSS or SCSS. Never worry about window resizing. Use HTML5 progress element. Setup with one line of JavaScript.</p>
-			<p><a class="btn btn-lg btn-primary" href="#" role="button"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download</a></p>
+			<p><a class="btn btn-lg btn-primary" href="https://github.com/Tymek/ScrollIndicator" role="button"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download</a></p>
 		</div>
 		<div class="jumbofix">
 			<div class="row">
@@ -67,7 +67,7 @@ $(window).load(function () {
 					<h3>Usage</h3>
 					<p>You can choose parent element for scroll bar:</p>
 <pre>$("#elementbyid").scrollIndicator();</pre>
-					<p>In this case it will be helpful to include custom style.</p>
+					<p>In this case it will be helpful to include custom style. Without setting target element in this way, it will be attatched to <code>$("body")</code> element. (See basic example).</p>
 					<h3>Options</h3>
 <pre>$.scrollIndicator({delay: 333, bindResize: false});</pre>
 					<p>Pass options object on initialization</p>
@@ -83,6 +83,13 @@ $(window).load(function () {
 					<h4>bindDOMSubtreeModified</h4>
 					<p>React to changes in DOM model. <strong>Not recommended.</strong><br>
 					Default: <code>false</code></p>
+					<h3>Public methods</h3>
+<pre>$("#element").data('scrollIndicator').reload();</pre>
+					<p>This will re-calculate slider value. Useful for sites with dynamic content. For now there is only that one useful public method is available.</p>
+					<h3>Planned features</h3>
+					<ul>
+						<li>Anchor link support</li>
+					</ul>
 				</div>
 			</div>
 		</div>
