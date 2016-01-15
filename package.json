@@ -1,6 +1,6 @@
 {
   "name": "scrollindicator",
-  "version": "0.8",
+  "version": "0.9",
   "description": "Visualize reading progress with small and simple jQuery plugin.",
   "devDependencies": {
     "grunt": "^0.4.5",

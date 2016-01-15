@@ -50,7 +50,7 @@
 	<div class="container">
 		<div class="jumbotron">
 			<h1>Scroll indicator</h1>
-			<p class="lead">Visualize reading progress with small and simple jQuery plugin. Adjust style with CSS or SCSS. Never worry about window resizing. Use HTML5 progress element. Setup with one line of JavaScript.</p>
+			<p class="lead">Visualize reading progress with small and simple jQuery plugin. Adjust style with CSS or SCSS. Never worry about window resizing. HTML5 progress element support. Setup with one line of JavaScript.</p>
 			<p><a class="btn btn-lg btn-primary" href="https://github.com/Tymek/ScrollIndicator" role="button"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download</a></p>
 		</div>
 		<div class="jumbofix">
@@ -70,12 +70,15 @@ $(window).load(function () {
 					<p>In this case it will be helpful to include custom style. Without setting target element in this way, it will be attatched to <code>$("body")</code> element. (See basic example).</p>
 					<h3>Options</h3>
 <pre>$.scrollIndicator({delay: 333, bindResize: false});</pre>
-					<p>Pass options object on initialization</p>
+					<p>Pass options object on initialization.</p>
 					<h4>delay</h4>
 					<p>Time in miliseconds between interaction (ex. scroll or resize event) and plugin update.<br>
 					Default: <code>100</code></p>
+					<h4>html5</h4>
+					<p>Use of <code>progress</code> element. Disable for CSS3 animation.<br>
+					Default: <code>false</code></p>
 					<h4>ieSupport</h4>
-					<p>Support for IE8 and IE9 browsers.<br>
+					<p>Support for IE8 and IE9 browsers. Always <code>true</code> if HTML5 version is turned off.<br>
 					Default: <code>true</code></p>
 					<h4>bindResize</h4>
 					<p>Re-calculate values on <code>window.resize</code> event.<br>
@@ -89,6 +92,7 @@ $(window).load(function () {
 					<h3>Planned features</h3>
 					<ul>
 						<li>Anchor link support</li>
+						<li>Animation with progress element</li>
 					</ul>
 				</div>
 			</div>
@@ -98,7 +102,7 @@ $(window).load(function () {
 
 	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 	<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-	<script src="../js/scrollindicator.jquery.min.js"></script>
+	<script src="../js/scrollindicator.jquery.js"></script>
 	<script src="functions.js"></script>
 </body>
 

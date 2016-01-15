@@ -1,9 +1,11 @@
-$background: #eee;
+$background: #eeeeee;
 $foreground: #337ab7;
+$size: 8px;
+$anim: 300ms;
 
-.scrollindicator {
+@mixin scrollindicator () {
 	width: 100%;
-	height: 10px;
+	height: $size;
 	display: block;
 	border: none;
 	z-index: 500;
@@ -11,33 +13,46 @@ $foreground: #337ab7;
 	color: $foreground;
 }
 
-progress.scrollindicator {
+.scrollindicator {
+	@include scrollindicator();
+}
+
+progress.scrollindicator,
+div.scrollindicator {
 	margin-bottom: 20px;
 	position: fixed;
+}
+
+progress.scrollindicator {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
+	
+	&::-webkit-progress-bar {
+		background-color: transparent;
+	}
+	
+	&::-webkit-progress-value {
+		background-color: $foreground;
+	}
+	
+	&::-moz-progress-bar {
+		background-color: $foreground;
+	}
 }
 
-progress.scrollindicator::-webkit-progress-bar {
-	background-color: transparent;
-}
-
-progress.scrollindicator::-webkit-progress-value {
-	background-color: $foreground;
-}
-
-progress.scrollindicator::-moz-progress-bar {
-	background-color: $foreground;
-}
-
-.scrollindicator-ie {
-	@extend .scrollindicator;
+.scrollindicator-nohtml5 {
+	@include scrollindicator();
 	span {
 		width: 100%;
 		height: 100%;
 		display: block;
 		text-indent: -9999px;
 		background: $foreground;
+	}
+	
+	.animated & span {
+		-webkit-transition: width $anim ease;
+		transition: width $anim ease;
 	}
 }

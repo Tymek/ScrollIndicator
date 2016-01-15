@@ -25,7 +25,7 @@ module.exports = function (grunt) {
 		},
 		cssmin: {
 			options: {
-				sourceMap: true
+				sourceMap: false
 			},
 			target: {
 				files: {
