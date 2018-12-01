@@ -1,4 +1,7 @@
 # Scroll Indicator
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/Tymek/ScrollIndicator.svg)](https://greenkeeper.io/)
+
 _Visualize reading progress with small and simple jQuery plugin._
 
 Online demo and instructions available at [www.tymek.cz/lab/scrollindicator](http://www.tymek.cz/lab/scrollindicator/)
